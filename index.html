@@ -11,6 +11,8 @@ app.controller("myCtrl", function($scope) {
     $scope.addItem = function () {
         $scope.errortext = "";
         if (!$scope.addMe) {return;}
+        $scope.addMe=$scope.addMe.toLowerCase();
+        $scope.addMe=$scope.addMe.charAt(0).toUpperCase()+$scope.addMe.substring(1,$scope.addMe.length);
         if ($scope.products.indexOf($scope.addMe) == -1) {
             $scope.products.push($scope.addMe);
         } else {
